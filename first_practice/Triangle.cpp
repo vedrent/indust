@@ -1,20 +1,22 @@
 #include "Triangle.h"
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-bool Triangle::exst_tr() {
-    return ((a + b > c) && (b + c > a) && (a + c > b));
-}
 void Triangle::set(double a1, double b1, double c1) {
     a = a1;
     b = b1;
     c = c1;
 }
+bool Triangle::exst_tr() {
+    return ((a + b > c) && (b + c > a) && (a + c > b));
+}
+
 void Triangle::show() {
-    cout << "1 сторона: " << a << endl;
-    cout << "2 сторона: " << b << endl;
-    cout << "3 сторона: " << c << endl;
+    cout << "1 СЃС‚РѕСЂРѕРЅР°: " << a << endl;
+    cout << "2 СЃС‚РѕСЂРѕРЅР°: " << b << endl;
+    cout << "3 СЃС‚РѕСЂРѕРЅР°: " << c << endl;
 }
 double Triangle::perimetr() {
     double p = a + b + c;
