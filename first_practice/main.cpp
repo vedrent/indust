@@ -1,5 +1,6 @@
 ﻿#include "Triangle.h"
 #include "Circle.h"
+#include "Figure.h"
 #include <iostream>
 #include <windows.h>
 
@@ -55,11 +56,45 @@ void Circl(){
     }
 }
 
+void Figur(){
+    Figure mas[3];
+    float x1, x2, x3, x4, y1, y2, y3, y4;
+    for (int i = 0; i < 3; i++){
+        cout << "Введите x1, x2, x3, x4, y1, y2, y3, y4 для четырёхугольника № " << i+1 << " через пробел: " << endl;
+        cin >> x1 >> x2 >> x3 >> x4 >> y1 >> y2 >> y3 >> y4;
+        mas[i] = Figure(x1,x2,x3,x4,y1,y2,y3,y4);
+    }
+    // Первая фигура:
+    cout << "Информация о первой фигуре: \n";
+    mas[0].show();
+    // Вторая фигура:
+    if (mas[1].is_square()){
+        cout << "Вторая фигура - квадрат\n";
+    } else if (mas[1].is_prug()){
+        cout << "Вторая фигура - прямоугольник\n";
+    } else if (mas[1].is_romb()){
+        cout << "Вторая фигура - ромб\n";
+    } else{
+        cout << "Вторая фигура - четырёхугольник\n";
+    }
+    // Третья фигура:
+    if (mas[2].is_in_circle()){
+        cout << "Третий четырёхугольник можно вписать в окружность \n";
+    }
+    if (mas[2].is_out_circle()){
+        cout << "Третий четырёхугольник можно описать около окружности \n";
+    }
+    if (!mas[2].is_in_circle() and !mas[2].is_out_circle()){
+        cout << "Третий четырёхугольник нельзя не вписать, не описать около окружности \n";
+    }
+}
+
 int main()
 {
     SetConsoleOutputCP(CP_UTF8);
-//    Triangl();
+    Triangl();
     Circl();
+    Figur();
     bool temp;
     cin >> temp;
     return 0;
