@@ -8,4 +8,5 @@ protected:
     double area;
     double deep;
     double salinity;
+public:
 };

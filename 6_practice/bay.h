@@ -1,14 +1,12 @@
-//
-// Created by vedrent on 26.03.2023.
-//
-
-#ifndef INDUST_BAY_H
-#define INDUST_BAY_H
-
+#include "string"
+using namespace std;
 
 class bay {
-
+protected:
+    string name;
+    string coordinates;
+    double area;
+    double deep;
+    double salinity;
+public:
 };
-
-
-#endif //INDUST_BAY_H
